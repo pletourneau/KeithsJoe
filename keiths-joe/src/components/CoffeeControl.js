@@ -103,7 +103,7 @@ class CoffeeControl extends React.Component {
     } else {
       currentlyVisibleState = (
         <CoffeeList
-          ticketList={this.state.mainCoffeeList}
+          coffeeList={this.state.mainCoffeeList}
           onCoffeeSelection={this.handleChangingSelectedCoffee}
         />
       );

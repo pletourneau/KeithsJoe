@@ -3,7 +3,7 @@ import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 
 function EditCoffeeForm(props) {
-  const { ticket } = props;
+  const { coffee } = props;
 
   function handleEditCoffeeFormSubmission(event) {
     event.preventDefault();
@@ -11,7 +11,7 @@ function EditCoffeeForm(props) {
       names: event.target.names.value,
       location: event.target.location.value,
       issue: event.target.issue.value,
-      id: ticket.id,
+      id: coffee.id,
     });
   }
 
@@ -26,7 +26,7 @@ function EditCoffeeForm(props) {
 }
 
 EditCoffeeForm.propTypes = {
-  ticket: PropTypes.object,
+  coffee: PropTypes.object,
   onEditCoffee: PropTypes.func,
 };
 
