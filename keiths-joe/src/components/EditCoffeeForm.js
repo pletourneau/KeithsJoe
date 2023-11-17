@@ -22,6 +22,14 @@ function EditCoffeeForm(props) {
       <ReusableForm
         formSubmissionHandler={handleEditCoffeeFormSubmission}
         buttonText="Update Coffee"
+        isEditing={true}
+        defaultValues={{
+          name: coffee.name,
+          origin: coffee.origin,
+          price: coffee.price.toString(),
+          roast: coffee.roast,
+          inventory: coffee.inventory.toString(),
+        }}
       />
     </React.Fragment>
   );

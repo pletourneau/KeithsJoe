@@ -2,30 +2,48 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function ReusableForm(props) {
-  const isEditing = props.isEditing;
+  const { formSubmissionHandler, buttonText, isEditing, defaultValues } = props;
 
   return (
     <React.Fragment>
-      <form onSubmit={props.formSubmissionHandler}>
-        <input type="text" name="name" placeholder="Coffee Name" />
-        <input type="text" name="origin" placeholder="Origin" />
-        <input type="number" name="price" placeholder="Price" />
+      <form onSubmit={formSubmissionHandler}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Coffee Name"
+          defaultValue={isEditing ? defaultValues.name : ""}
+        />
+        <input
+          type="text"
+          name="origin"
+          placeholder="Origin"
+          defaultValue={isEditing ? defaultValues.origin : ""}
+        />
+        <input
+          type="number"
+          name="price"
+          placeholder="Price"
+          defaultValue={isEditing ? defaultValues.price : ""}
+        />
         <label htmlFor="roast">Roast</label>
-        <select name="roast">
+        <select
+          name="roast"
+          defaultValue={isEditing ? defaultValues.roast : ""}
+        >
           <option value="light">Light</option>
           <option value="medium">Medium</option>
           <option value="dark">Dark</option>
           <option value="decaf">Decaf</option>
         </select>
-        {isEditing && ( // Only render for editing
+        {isEditing && (
           <input
             type="number"
             name="inventory"
             placeholder="130"
-            value={props.inventoryValue} // Set the current inventory value for editing
+            defaultValue={isEditing ? defaultValues.inventory : ""}
           />
         )}
-        <button type="submit">{props.buttonText}</button>
+        <button type="submit">{buttonText}</button>
       </form>
     </React.Fragment>
   );
@@ -34,8 +52,8 @@ function ReusableForm(props) {
 ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string,
-  isEditing: PropTypes.bool, // Add this prop
-  inventoryValue: PropTypes.number, // Add this prop
+  isEditing: PropTypes.bool,
+  defaultValues: PropTypes.object,
 };
 
 export default ReusableForm;
