@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function ReusableForm(props) {
+  const isEditing = props.isEditing;
+
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
@@ -15,7 +17,14 @@ function ReusableForm(props) {
           <option value="dark">Dark</option>
           <option value="decaf">Decaf</option>
         </select>
-        <input type="number" name="inventory" placeholder="130" />
+        {isEditing && ( // Only render for editing
+          <input
+            type="number"
+            name="inventory"
+            placeholder="130"
+            value={props.inventoryValue} // Set the current inventory value for editing
+          />
+        )}
         <button type="submit">{props.buttonText}</button>
       </form>
     </React.Fragment>
@@ -25,6 +34,8 @@ function ReusableForm(props) {
 ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string,
+  isEditing: PropTypes.bool, // Add this prop
+  inventoryValue: PropTypes.number, // Add this prop
 };
 
 export default ReusableForm;
