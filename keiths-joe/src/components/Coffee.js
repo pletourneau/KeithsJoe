@@ -8,9 +8,9 @@ function Coffee(props) {
         <h3>{props.name}</h3>
         <p>
           {props.origin}
-          {props.price}
+          {Number(props.price)}
           {props.roast}
-          {props.inventory}
+          {Number(props.inventory)}
         </p>
         <hr />
       </div>
@@ -19,11 +19,11 @@ function Coffee(props) {
 }
 
 Coffee.propTypes = {
-  name: PropTypes.string.isRequired,
-  origin: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  roast: PropTypes.string.isRequired,
-  inventory: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  origin: PropTypes.string,
+  price: PropTypes.number,
+  roast: PropTypes.string,
+  inventory: PropTypes.number,
   id: PropTypes.string,
   whenCoffeeClicked: PropTypes.func,
 };

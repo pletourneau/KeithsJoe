@@ -10,9 +10,9 @@ function EditCoffeeForm(props) {
     props.onEditCoffee({
       name: event.target.name.value,
       origin: event.target.origin.value,
-      price: event.target.price.value,
+      price: Number(event.target.price.value),
       roast: event.target.roast.value,
-      inventory: event.target.inventory.value,
+      inventory: Number(event.target.inventory.value),
       id: coffee.id,
     });
   }

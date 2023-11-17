@@ -8,7 +8,7 @@ function ReusableForm(props) {
         <input type="text" name="name" placeholder="Coffee Name" />
         <input type="text" name="origin" placeholder="Origin" />
         <input type="number" name="price" placeholder="Price" />
-        <label for="roast">Roast</label>
+        <label htmlFor="roast">Roast</label>
         <select name="roast">
           <option value="light">Light</option>
           <option value="medium">Medium</option>

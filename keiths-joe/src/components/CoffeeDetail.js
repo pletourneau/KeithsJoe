@@ -9,12 +9,10 @@ function CoffeeDetail(props) {
       <h1>Coffee Detail</h1>
       <h3>{coffee.name}</h3>
       <p>
-        <p>
-          {props.origin}
-          {props.price}
-          {props.roast}
-          {props.inventory}
-        </p>
+        {coffee.origin}
+        {coffee.price}
+        {coffee.roast}
+        {coffee.inventory}
       </p>
       <button onClick={props.onClickingSell}>Sell 1LB Coffee</button>
       <button onClick={props.onClickingEdit}>Update Coffee</button>
