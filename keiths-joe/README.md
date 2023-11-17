@@ -1,15 +1,14 @@
-# _{Application Name}_
+# _Keith's Joe_
 
-#### By _**{List of contributors}**_
+#### By _Paul LeTourneau_
 
-#### _{Brief description of application}_
+#### _Inventory management system for a coffee shop_
 
 ## Technologies Used
 
 - _JavaScript_
 - _HTML_
 - _CSS_
-<!-- - _Bootstrap_ -->
 - _Node.js v18.17.1_
 - _NPM v9.6.7_
 - _React_
@@ -18,11 +17,11 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_Inventory Management system for a coffee shop called Keith's Joe. Allows a user to add a large 130lb bag of coffee and decrement in amounts of 1lb. Can also edit and delete entries for monthly inventory_
 
 ## Component Diagram
 
-<img src="src/img/ComponentDiagram.png">
+<img src="src/img/ComponentDiagram.jpg">
 
 ## Setup/Installation Requirements
 
