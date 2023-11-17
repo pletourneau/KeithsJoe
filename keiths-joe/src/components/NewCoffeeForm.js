@@ -6,6 +6,7 @@ import ReusableForm from "./ReusableForm";
 function NewCoffeeForm(props) {
   return (
     <React.Fragment>
+      <h2>Add new sack of coffee</h2>
       <ReusableForm
         formSubmissionHandler={handleNewCoffeeFormSubmission}
         buttonText="Add Coffee"

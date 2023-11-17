@@ -7,7 +7,7 @@ function CoffeeDetail(props) {
   return (
     <React.Fragment>
       <h2>Coffee Detail</h2>
-      <h3>Name: {coffee.name}</h3>
+      <h3>{coffee.name}</h3>
       <p>Origin: {coffee.origin}</p>
       <p>Price: ${parseFloat(coffee.price).toFixed(2)}</p>
       <p>Roast Level: {coffee.roast}</p>
