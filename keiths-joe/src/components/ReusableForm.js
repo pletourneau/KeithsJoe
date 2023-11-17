@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function ReusableForm(props) {
   const { formSubmissionHandler, buttonText, isEditing, defaultValues } = props;
-
+  const formatPrice = (price) => (price ? parseFloat(price).toFixed(2) : "");
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
@@ -22,8 +22,10 @@ function ReusableForm(props) {
         <input
           type="number"
           name="price"
-          placeholder="Price"
-          defaultValue={isEditing ? defaultValues.price : ""}
+          placeholder="Price/lb"
+          min="0"
+          step="0.01"
+          defaultValue={isEditing ? formatPrice(defaultValues.price) : ""}
         />
         <label htmlFor="roast">Roast</label>
         <select

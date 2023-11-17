@@ -153,7 +153,7 @@ class CoffeeControl extends React.Component {
           onCoffeeSelection={this.handleChangingSelectedCoffee}
         />
       );
-      buttonText = "Add coffee";
+      buttonText = "Add new coffee";
     }
     return (
       <React.Fragment>

@@ -6,15 +6,12 @@ function CoffeeDetail(props) {
 
   return (
     <React.Fragment>
-      <h1>Coffee Detail</h1>
-      <h3>{coffee.name}</h3>
-      <p>
-        {coffee.origin}
-        {coffee.price}
-        {coffee.roast}
-        {coffee.inventory}
-      </p>
-      {/* <button onClick={props.onClickingSell}>Sell 1LB Coffee</button> */}
+      <h2>Coffee Detail</h2>
+      <h3>Name: {coffee.name}</h3>
+      <p>Origin: {coffee.origin}</p>
+      <p>Price: ${parseFloat(coffee.price).toFixed(2)}</p>
+      <p>Roast Level: {coffee.roast}</p>
+      <p>Inventory (in lbs): {coffee.inventory}</p>
       <button onClick={() => props.onClickingSell(coffee.id)}>
         Sell 1LB Coffee
       </button>
