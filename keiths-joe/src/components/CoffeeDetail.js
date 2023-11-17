@@ -7,15 +7,19 @@ function CoffeeDetail(props) {
   return (
     <React.Fragment>
       <h1>Coffee Detail</h1>
-      <h3>
-        {coffee.location} - {coffee.names}
-      </h3>
+      <h3>{coffee.name}</h3>
       <p>
-        <em>{coffee.issue}</em>
+        <p>
+          {props.origin}
+          {props.price}
+          {props.roast}
+          {props.inventory}
+        </p>
       </p>
+      <button onClick={props.onClickingSell}>Sell 1LB Coffee</button>
       <button onClick={props.onClickingEdit}>Update Coffee</button>
       <button onClick={() => onClickingDelete(coffee.id)}>
-        Close Coffee
+        Remove Coffee
       </button>{" "}
       <hr />
     </React.Fragment>
@@ -26,6 +30,7 @@ CoffeeDetail.propTypes = {
   coffee: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func,
+  onClickingSell: PropTypes.func,
 };
 
 export default CoffeeDetail;
