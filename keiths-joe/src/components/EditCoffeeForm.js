@@ -8,9 +8,11 @@ function EditCoffeeForm(props) {
   function handleEditCoffeeFormSubmission(event) {
     event.preventDefault();
     props.onEditCoffee({
-      names: event.target.names.value,
-      location: event.target.location.value,
-      issue: event.target.issue.value,
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      price: event.target.price.value,
+      roast: event.target.roast.value,
+      inventory: event.target.inventory.value,
       id: coffee.id,
     });
   }
