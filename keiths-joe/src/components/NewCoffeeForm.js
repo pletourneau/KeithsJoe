@@ -8,15 +8,17 @@ function NewCoffeeForm(props) {
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler={handleNewCoffeeFormSubmission}
-        buttonText="Help!"
+        buttonText="Add Coffee"
       />
     </React.Fragment>
   );
   function handleNewCoffeeFormSubmission(event) {
     props.onNewCoffeeCreation({
-      names: event.target.names.value,
-      location: event.target.location.value,
-      issue: event.target.issue.value,
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      price: event.target.price.value,
+      roast: event.target.roast.value,
+      inventory: event.target.inventory.value,
       id: v4(),
     });
   }
