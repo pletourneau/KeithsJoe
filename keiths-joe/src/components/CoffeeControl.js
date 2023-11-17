@@ -77,23 +77,47 @@ class CoffeeControl extends React.Component {
 
   //SELL 1LB COFFEE
   handleSellingCoffee = (id) => {
-    const selectedCoffee = this.state.mainCoffeeList.filter(
-      (coffee) => coffee.id === id
-    )[0];
-    console.log(id);
-    if (selectedCoffee.inventory >= 1) {
-      const coffeeSale = {
-        selectedCoffee,
-        inventory: selectedCoffee.inventory - 1,
-      };
-      const newMainCoffeeList = this.state.mainCoffeeList
-        .filter((coffee) => coffee.id !== id)
-        .concat(coffeeSale);
-      this.setState({
-        mainCoffeeList: newMainCoffeeList,
+    this.setState((prevState) => {
+      const updatedCoffeeList = prevState.mainCoffeeList.map((coffee) => {
+        if (coffee.id === id && coffee.inventory >= 1) {
+          return {
+            ...coffee,
+            inventory: coffee.inventory - 1,
+          };
+        }
+        console.log(coffee.id);
+        return coffee;
       });
-    }
+      this.setState({
+        mainCoffeeList: updatedCoffeeList,
+        editing: false,
+        selectedCoffee: null,
+      });
+      return {
+        mainCoffeeList: updatedCoffeeList,
+      };
+    });
   };
+
+  // handleSellingCoffee = (id) => {
+  //   const selectedCoffee = this.state.mainCoffeeList.filter(
+  //     (coffee) => coffee.id === id
+  //   )[0];
+  //   console.log(id);
+  //   if (selectedCoffee.inventory >= 1) {
+  //     const coffeeSale = {
+  //       ...selectedCoffee,
+  //       inventory: selectedCoffee.inventory - 1,
+  //     };
+  //     const newMainCoffeeList = this.state.mainCoffeeList
+  //       .filter((coffee) => coffee.id !== id)
+  //       .concat(coffeeSale);
+  //     this.setState({
+  //       mainCoffeeList: newMainCoffeeList,
+  //     });
+  //     this.handleEditingCoffeeInList(id);
+  //   }
+  // };
 
   render() {
     let currentlyVisibleState = null;

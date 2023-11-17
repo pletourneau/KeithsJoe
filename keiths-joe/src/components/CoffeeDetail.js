@@ -14,7 +14,10 @@ function CoffeeDetail(props) {
         {coffee.roast}
         {coffee.inventory}
       </p>
-      <button onClick={props.onClickingSell}>Sell 1LB Coffee</button>
+      {/* <button onClick={props.onClickingSell}>Sell 1LB Coffee</button> */}
+      <button onClick={() => props.onClickingSell(coffee.id)}>
+        Sell 1LB Coffee
+      </button>
       <button onClick={props.onClickingEdit}>Update Coffee</button>
       <button onClick={() => onClickingDelete(coffee.id)}>
         Remove Coffee
