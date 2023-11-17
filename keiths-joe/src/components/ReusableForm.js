@@ -12,12 +12,14 @@ function ReusableForm(props) {
           name="name"
           placeholder="Coffee Name"
           defaultValue={isEditing ? defaultValues.name : ""}
+          required
         />
         <input
           type="text"
           name="origin"
           placeholder="Origin"
           defaultValue={isEditing ? defaultValues.origin : ""}
+          required
         />
         <input
           type="number"
@@ -26,6 +28,7 @@ function ReusableForm(props) {
           min="0"
           step="0.01"
           defaultValue={isEditing ? formatPrice(defaultValues.price) : ""}
+          required
         />
         <label htmlFor="roast">Roast</label>
         <select
@@ -41,8 +44,8 @@ function ReusableForm(props) {
           <input
             type="number"
             name="inventory"
-            placeholder="130"
             defaultValue={isEditing ? defaultValues.inventory : ""}
+            required
           />
         )}
         <button type="submit">{buttonText}</button>
