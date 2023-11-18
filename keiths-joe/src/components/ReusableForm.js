@@ -44,6 +44,7 @@ function ReusableForm(props) {
           <input
             type="number"
             name="inventory"
+            min="0"
             defaultValue={isEditing ? defaultValues.inventory : ""}
             required
           />
