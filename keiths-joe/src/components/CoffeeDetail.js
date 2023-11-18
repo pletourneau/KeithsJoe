@@ -12,7 +12,10 @@ function CoffeeDetail(props) {
       <p>Price: ${parseFloat(coffee.price).toFixed(2)}</p>
       <p>Roast Level: {coffee.roast}</p>
       <p>Inventory (in lbs): {coffee.inventory}</p>
-      <button onClick={() => props.onClickingSell(coffee.id)}>
+      <button
+        onClick={() => props.onClickingSell(coffee.id)}
+        disabled={coffee.inventory === 0}
+      >
         Sell 1LB Coffee
       </button>
       <button onClick={props.onClickingEdit}>Update Coffee</button>
