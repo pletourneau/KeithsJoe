@@ -16,7 +16,6 @@ class CoffeeControl extends React.Component {
   }
 
   //NEW COFFEE
-
   handleAddingNewCoffeeToList = (newCoffee) => {
     const newMainCoffeeList = this.state.mainCoffeeList.concat(newCoffee);
     this.setState({
@@ -45,7 +44,6 @@ class CoffeeControl extends React.Component {
     const selectedCoffee = this.state.mainCoffeeList.filter(
       (coffee) => coffee.id === id
     )[0];
-    console.log("Selected Coffee:", selectedCoffee);
     this.setState({ selectedCoffee: selectedCoffee });
   };
 
@@ -85,7 +83,6 @@ class CoffeeControl extends React.Component {
             inventory: coffee.inventory - 1,
           };
         }
-        console.log(coffee.id);
         return coffee;
       });
       this.setState({
